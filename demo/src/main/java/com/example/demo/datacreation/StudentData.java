@@ -33,7 +33,7 @@ public class StudentData {
     @EventListener(ApplicationReadyEvent.class)
     public void initializeStudentData() {
         try {
-            List<Student> students = new CsvToBeanBuilder(new FileReader("/Users/trungdang/project/demo/src/main/resources/data/student.csv"))
+            List<Student> students = new CsvToBeanBuilder(new FileReader("src/main/resources/data/student.csv"))
                     .withType(Student.class)
                     .build()
                     .parse();

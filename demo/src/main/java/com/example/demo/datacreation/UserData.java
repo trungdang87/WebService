@@ -40,7 +40,7 @@ public class UserData {
         ObjectMapper mapper = new ObjectMapper();
         try {
             if (CollectionUtils.isEmpty(allUsers)) {
-                allUsers = mapper.readValue(new File("/Users/trungdang/project/demo/src/main/resources/data/user.json"), new TypeReference<List<User>>() {
+                allUsers = mapper.readValue(new File("src/main/resources/data/user.json"), new TypeReference<List<User>>() {
                 });
             }
             if (CollectionUtils.isEmpty(userIdMap) && !CollectionUtils.isEmpty(allUsers)) {
