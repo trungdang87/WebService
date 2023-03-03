@@ -1,0 +1,50 @@
+[
+    {
+        "id": 111,
+        "fistName": "aaa",
+        "lastName": "bbb",
+        "address": "aaaAddress",
+        "hobby": {
+            "land": [
+                "running",
+                "skating"
+            ],
+            "water": [
+                "jet ski",
+                "sailing"
+            ]
+        }
+    },
+    {
+        "id": 222,
+        "fistName": "ccc",
+        "lastName": "ddd",
+        "address": "cccAddress",
+        "hobby": {
+            "land": [
+                "running",
+                "cycling"
+            ],
+            "water": [
+                "jet ski",
+                "sailing"
+            ]
+        }
+    },
+    {
+        "id": 333,
+        "fistName": "eee",
+        "lastName": "fff",
+        "address": "eeeAddress",
+        "hobby": {
+            "land": [
+                "basket ball",
+                "skating"
+            ],
+            "water": [
+                "jet ski",
+                "sailing"
+            ]
+        }
+    }
+]

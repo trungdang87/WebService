@@ -8,57 +8,40 @@ import java.util.Map;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
     private long id;
-    private String first_name;
-    private String last_name;
-    private String email;
-    private String avatar;
-    private Map<String, List<String>> event_type;
+    private String fistName;
+    private String lastName;
+
+    private Map<String, List<String>> hobby;
 
     public long getId() {
         return id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFistName() {
+        return fistName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public Map<String, List<String>> getEvent_type() {
-        return event_type;
+    public Map<String, List<String>> getHobby() {
+        return hobby;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFistName(String fistName) {
+        this.fistName = fistName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    public void setEvent_type(Map<String, List<String>> event_type) {
-        this.event_type = event_type;
+    public void setHobby(Map<String, List<String>> hobby) {
+        this.hobby = hobby;
     }
 }

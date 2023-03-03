@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class UserData {
     private List<User> allUsers = new ArrayList<>();
     private Map<Long, User> userIdMap = new HashMap<>();
-    private Map<String, List<User>> eventTypeMap = new HashMap<>();
+    private Map<String, List<User>> userHobbyMap = new HashMap<>();
 
     public List<User> getAllUsers() {
         return allUsers;
@@ -31,31 +31,31 @@ public class UserData {
         return userIdMap.get(id);
     }
 
-    public List<User> getUsersByEventType(String eventType) {
-        return eventTypeMap.get(eventType);
+    public List<User> getUserByHobby(String hobby) {
+        return userHobbyMap.get(hobby);
     }
 
     @EventListener(ApplicationReadyEvent.class)
-    public void initializeData() {
+    public void initializeUserData() {
         ObjectMapper mapper = new ObjectMapper();
         try {
             if (CollectionUtils.isEmpty(allUsers)) {
-                allUsers = mapper.readValue(new File("/Users/trungdang/project/demo/src/main/resources/data/data.json"), new TypeReference<List<User>>() {
+                allUsers = mapper.readValue(new File("/Users/trungdang/project/demo/src/main/resources/data/user.json"), new TypeReference<List<User>>() {
                 });
             }
             if (CollectionUtils.isEmpty(userIdMap) && !CollectionUtils.isEmpty(allUsers)) {
                 userIdMap = allUsers.stream().collect(Collectors.toMap(User::getId, Function.identity()));
             }
-            if(CollectionUtils.isEmpty(eventTypeMap) && !CollectionUtils.isEmpty(allUsers)) {
+            if(CollectionUtils.isEmpty(userHobbyMap) && !CollectionUtils.isEmpty(allUsers)) {
                 for(User u : allUsers) {
-                    for(String event : u.getEvent_type().get("type")) {
-                        if(eventTypeMap.get(event) != null) {
+                    for(String event : u.getHobby().get("land")) {
+                        if(userHobbyMap.get(event) != null) {
                             List<User> users = new ArrayList<>();
-                            users.addAll(eventTypeMap.get(event));
+                            users.addAll(userHobbyMap.get(event));
                             users.add(u);
-                            eventTypeMap.put(event, users);
+                            userHobbyMap.put(event, users);
                         } else {
-                            eventTypeMap.put(event, List.of(u));
+                            userHobbyMap.put(event, List.of(u));
                         }
                     }
                 }

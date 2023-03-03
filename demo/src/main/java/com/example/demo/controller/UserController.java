@@ -20,19 +20,16 @@ public class UserController {
 
     @GetMapping
     public List getAllUsers() {
-        String test = "test";
         return userData.getAllUsers();
     }
 
     @GetMapping("/{userId}")
     public User getUserById(@PathVariable Long userId) {
-        String test = "test";
         return userData.getUserById(userId);
     }
 
-    @GetMapping("/event/{eventType}")
-    public List<User> getUserById(@PathVariable String eventType) {
-        String test = "test";
-        return userData.getUsersByEventType(eventType);
+    @GetMapping("/hobby/{hobby}")
+    public List<User> getUserByHobby(@PathVariable String hobby) {
+        return userData.getUserByHobby(hobby);
     }
 }
