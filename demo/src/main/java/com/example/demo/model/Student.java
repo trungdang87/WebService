@@ -17,6 +17,25 @@ public class Student {
     @CsvBindByName(column = "year")
     private int year;
 
+    private String encryptedYear;
+    private String decryptedYear;
+
+    public String getDecryptedYear() {
+        return decryptedYear;
+    }
+
+    public void setDecryptedYear(String decryptedYear) {
+        this.decryptedYear = decryptedYear;
+    }
+
+    public String getEncryptedYear() {
+        return encryptedYear;
+    }
+
+    public void setEncryptedYear(String encryptedYear) {
+        this.encryptedYear = encryptedYear;
+    }
+
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
